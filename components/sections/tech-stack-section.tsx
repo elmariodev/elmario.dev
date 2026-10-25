@@ -1,17 +1,6 @@
 const capabilityGroups = [
   {
-    title: "Product",
-    tools: [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "Drizzle",
-    ],
-  },
-  {
-    title: "Automation and AI",
+    title: "AI and automation",
     tools: [
       "Hono",
       "Trigger.dev",
@@ -22,6 +11,17 @@ const capabilityGroups = [
       "MCP",
       "Claude Code",
       "Codex",
+    ],
+  },
+  {
+    title: "Product",
+    tools: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Drizzle",
     ],
   },
   {

@@ -64,12 +64,12 @@ export default async function OpenGraphImage() {
               display: "flex",
               maxWidth: 680,
               fontFamily: "Archivo Black",
-              fontSize: 68,
+              fontSize: 60,
               lineHeight: 1.02,
               letterSpacing: "-0.02em",
             }}
           >
-            Web apps, automation, and AI tools.
+            AI agents, automation, and the apps around them.
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -88,7 +88,7 @@ export default async function OpenGraphImage() {
             >
               <span>Full-stack engineer</span>
               <span>TypeScript</span>
-              <span>AI agents</span>
+              <span>Agent orchestration</span>
             </div>
           </div>
         </div>

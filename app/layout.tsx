@@ -28,9 +28,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   applicationName: "Mario Montano Portfolio",
   title:
-    "Mario Montano | Full-Stack Engineer | AI Tools and Automation",
+    "Mario Montano | Full-Stack Engineer | AI Agents and Automation",
   description:
-    "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
+    "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   keywords: [
     "Mario Montano",
     "Full-Stack Engineer",
@@ -72,13 +72,13 @@ export const metadata: Metadata = {
     siteName: "Mario Montano Portfolio",
     title: "Mario Montano | Full-Stack Engineer",
     description:
-      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
+      "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mario Montano | Full-Stack Engineer",
     description:
-      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
+      "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     creator: "@elmariodev",
   },
   robots: {
@@ -105,7 +105,7 @@ export default function RootLayout({
     name: "Mario Montano",
     jobTitle: "Full-Stack Developer, Ventura AI",
     description:
-      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
+      "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     url: "https://elmario.dev",
     sameAs: [
       "https://github.com/elmariodev",

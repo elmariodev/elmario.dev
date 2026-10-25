@@ -12,7 +12,7 @@ export function HeroSection() {
           </p>
 
           <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-[1] tracking-[-0.02em]">
-            I build web apps, automation, and AI tools.
+            I build AI agents, automation, and the apps around them.
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-8">
