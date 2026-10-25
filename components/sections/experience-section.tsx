@@ -18,7 +18,7 @@ const experience = [
     dates: "Feb 2026 - Oct 2026",
     current: false,
     summary:
-      "I moved the company's automations from legacy services and Make into a TypeScript monorepo, cut the active Make scenarios from 29 to 1, built new automations for the operations and finance teams, and documented 500+ automations in one catalog.",
+      "I moved all of the company's automations from legacy services and no-code tools into a TypeScript monorepo, built new automations for the operations and finance teams, and set up documentation for 500+ automations that regenerates itself whenever the code changes.",
   },
   {
     company: "Omniwound",
@@ -94,14 +94,15 @@ export function ExperienceSection() {
             <p className="body-copy text-foreground">
               Ventura runs hundreds of automations: booking changes, payment
               reminders, provider emails, and tasks for the operations team.
-              When I joined, they were spread across old services and Make, a
-              no-code platform.
+              When I joined, they were spread across old services and a no-code
+              platform.
             </p>
             <p className="body-copy">
-              I moved them into a TypeScript monorepo and cut the active Make
-              scenarios from 29 to 1 in about a week. I also built a catalog
-              that documents 500+ automations: what each one does and when it
-              runs. The animation below shows the kind of flow I build, without
+              I moved all of them into a TypeScript monorepo, and the no-code
+              platform is now turned off. I also built an automation that
+              documents the others: whenever one changes, its entry in the
+              catalog is regenerated. The catalog covers 500+ automations, what
+              each one does and when it runs. The animation below shows the kind of flow I build, without
               real data.
             </p>
             <p className="text-sm leading-6 text-muted-foreground">
