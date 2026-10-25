@@ -28,12 +28,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   applicationName: "Mario Montano Portfolio",
   title:
-    "Mario Montano | Full-Stack Engineer | AI Agents and Automation",
+    "Mario Montano | Full Stack Engineer | AI Agents and Automation",
   description:
     "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   keywords: [
     "Mario Montano",
-    "Full-Stack Engineer",
+    "Full Stack Engineer",
     "TypeScript",
     "React",
     "Next.js",
@@ -103,7 +103,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Mario Montano",
-    jobTitle: "Full-Stack Developer, Ventura AI",
+    jobTitle: "Full Stack Developer, Ventura AI",
     description:
       "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     url: "https://elmario.dev",
@@ -118,7 +118,7 @@ export default function RootLayout({
       "https://www.facebook.com/elmariodev",
     ],
     knowsAbout: [
-      "Full-Stack Development",
+      "Full Stack Development",
       "TypeScript",
       "React",
       "Next.js",
@@ -149,9 +149,9 @@ export default function RootLayout({
     },
     hasOccupation: {
       "@type": "Occupation",
-      name: "Full-Stack Developer, Ventura AI",
+      name: "Full Stack Developer, Ventura AI",
       skills:
-        "Full-Stack Development, TypeScript, Node.js, GraphQL, PostgreSQL, Docker, CI/CD, Automation, AI Agents",
+        "Full Stack Development, TypeScript, Node.js, GraphQL, PostgreSQL, Docker, CI/CD, Automation, AI Agents",
     },
   };
 

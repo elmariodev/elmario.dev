@@ -3,7 +3,7 @@ import { AutomationRelay } from "@/components/experience/automation-relay";
 const experience = [
   {
     company: "Ventura Travel",
-    role: "Full-Stack Developer, Ventura AI",
+    role: "Full Stack Developer, Ventura AI",
     start: "2026-10",
     dates: "Oct 2026 - Present",
     current: true,
@@ -12,7 +12,7 @@ const experience = [
   },
   {
     company: "Ventura Travel",
-    role: "Full-Stack Developer, Automations",
+    role: "Full Stack Developer, Automations",
     start: "2026-02",
     end: "2026-10",
     dates: "Feb 2026 - Oct 2026",
@@ -22,7 +22,7 @@ const experience = [
   },
   {
     company: "Omniwound",
-    role: "Full-Stack Developer, then Senior Software Engineer",
+    role: "Full Stack Developer, then Senior Software Engineer",
     start: "2019-07",
     end: "2026-01",
     dates: "Jul 2019 - Jan 2026",

@@ -1,5 +1,5 @@
 import { ArrowDownRightIcon, MailIcon } from "lucide-react";
-import { AutomationWorkflowLoop } from "@/components/hero/automation-workflow-loop";
+import { AgentOrchestration } from "@/components/hero/agent-orchestration";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -46,7 +46,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <AutomationWorkflowLoop />
+        <AgentOrchestration />
       </div>
     </section>
   );
