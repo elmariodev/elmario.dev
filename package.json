@@ -1,5 +1,5 @@
 {
-  "name": "mariomon.dev",
+  "name": "elmario.dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,16 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
-  },
-  "pnpm": {
-    "overrides": {
-      "ajv@<6.14.0": "6.15.0",
-      "brace-expansion@<1.1.13": "1.1.16",
-      "flatted@<3.4.2": "3.4.2",
-      "js-yaml@>=4.0.0 <4.2.0": "4.3.0",
-      "minimatch@<3.1.4": "3.1.5",
-      "postcss": "8.5.19"
-    }
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.15",
