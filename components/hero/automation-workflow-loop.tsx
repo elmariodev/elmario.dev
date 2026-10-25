@@ -91,8 +91,8 @@ type NetworkLayout = {
 const workflows: Workflow[] = [
   {
     id: "scheduled-safeguard",
-    title: "Scheduled safeguard",
-    summary: "A timed check becomes clear, owned work.",
+    title: "Scheduled check",
+    summary: "A daily job finds records that need attention and assigns them.",
     trigger: {
       label: "Schedule",
       detail: "watch window reached",
@@ -126,16 +126,16 @@ const workflows: Workflow[] = [
       },
     ],
     outcome: {
-      label: "Owner ready",
-      detail: "next action clear",
+      label: "Assigned",
+      detail: "owner has the task",
       icon: UserCheckIcon,
       tone: "outcome",
     },
   },
   {
     id: "event-coordination",
-    title: "Event coordination",
-    summary: "A system event carries its context into coordinated action.",
+    title: "Record change",
+    summary: "A record changes and every system that depends on it is updated.",
     trigger: {
       label: "Record event",
       detail: "change received",
@@ -178,7 +178,7 @@ const workflows: Workflow[] = [
   {
     id: "document-delivery",
     title: "Document delivery",
-    summary: "Prepared information moves through storage and delivery.",
+    summary: "A scheduled job builds a file, stores a copy, and sends it.",
     trigger: {
       label: "Timed run",
       detail: "source data ready",
@@ -220,8 +220,8 @@ const workflows: Workflow[] = [
   },
   {
     id: "exception-recovery",
-    title: "Exception recovery",
-    summary: "An exception becomes a tracked path to resolution.",
+    title: "Missed deadline",
+    summary: "When something stops, a task opens and the owner is notified.",
     trigger: {
       label: "Deadline",
       detail: "watch window reached",
@@ -807,8 +807,8 @@ function getNodes(workflow: Workflow, layout: NetworkLayout): NetworkNode[] {
     trigger: workflow.trigger,
     logic: workflow.logic,
     core: {
-      label: "Automation layer",
-      detail: "context routes the work",
+      label: "Automation",
+      detail: "runs each step",
       icon: WorkflowIcon,
       tone: "core",
     },

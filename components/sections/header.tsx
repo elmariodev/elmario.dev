@@ -20,11 +20,16 @@ export function Header() {
       <div className="site-container flex h-18 items-center justify-between">
         <a
           href="#top"
-          className="focus-ring inline-flex h-11 items-center gap-3 rounded-md font-semibold tracking-[-0.02em]"
+          className="focus-ring inline-flex h-11 items-center gap-2.5 rounded-md text-lg"
           aria-label="Mario Montano, back to top"
         >
-          <span className="size-2.5 bg-primary" aria-hidden="true" />
-          <span>Mario Montano</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icon.svg" alt="" className="size-8" aria-hidden="true" />
+          <span className="flex items-baseline" aria-hidden="true">
+            <span className="font-mono font-bold text-muted-foreground">el</span>
+            <span className="font-black">mario</span>
+            <span className="font-mono font-bold text-primary">dev</span>
+          </span>
         </a>
 
         <nav

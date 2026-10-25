@@ -1,18 +1,18 @@
 const responsibilities = [
   {
-    title: "Architecture",
+    title: "Build",
     description:
-      "Turn ambiguous requirements into system boundaries, data models, APIs, and practical delivery plans.",
+      "Full-stack features in TypeScript, React, and Node.js, from the database to the UI.",
   },
   {
-    title: "Delivery",
+    title: "Automate",
     description:
-      "Build critical features, make tradeoffs visible, and stay responsible through release and production support.",
+      "Background jobs, integrations, and AI agents that take manual work off people's plates.",
   },
   {
-    title: "Technical leadership",
+    title: "Lead",
     description:
-      "Guide developers, align stakeholders, and create enough structure for teams to move without losing quality.",
+      "Architecture decisions, code reviews, and mentoring for small teams.",
   },
 ];
 
@@ -21,21 +21,23 @@ export function AboutSection() {
     <section id="about" className="section-container border-t">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div>
-          <h2 className="section-heading max-w-lg">Ownership, not handoffs.</h2>
+          <h2 className="section-heading max-w-lg">About</h2>
         </div>
 
         <div>
           <div className="max-w-3xl space-y-6">
             <p className="body-copy text-foreground">
-              I started building software in 2017. Since 2019, my work has
-              moved from building a healthcare platform from the ground up to
-              coordinating global travel operations through automation.
+              I started writing software in 2017. In 2019 I joined Omniwound as
+              one of its first engineers and helped build its EMR, an iPad app
+              for patient visits, and an insurance verification system. In
+              2026 I moved to Ventura Travel to work on automation, and since
+              October 2026 I&apos;m in charge of Ventura AI.
             </p>
             <p className="body-copy">
-              Across both domains, I work through product decisions,
-              architecture, implementation, releases, and production support.
-              Reliability, privacy, and operational context are product
-              requirements from the start.
+              I like owning a feature from start to finish: talking with the
+              people who will use it, designing the data model, writing the
+              code, and supporting it in production. I use AI coding agents
+              every day, with my own skills and review steps.
             </p>
           </div>
 

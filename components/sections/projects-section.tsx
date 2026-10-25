@@ -40,11 +40,11 @@ const featuredProjects: FeaturedProject[] = [
     id: "emr",
     title: "Enterprise EMR Platform",
     outcome:
-      "A multi-facility clinical platform built for the daily work of care teams.",
+      "The EMR that wound care providers used every day, across several facilities.",
     summary:
-      "Led architecture and full-stack delivery across charting, scheduling, prescriptions, labs, billing workflows, audit trails, and role-based access. Managed the path from requirements to production while guiding a three-person development team.",
-    role: "Architecture, full-stack delivery, and technical leadership",
-    note: "Production system protected by NDA. Demo uses sanitized data.",
+      "I joined as one of the first engineers. I led the architecture and built features across charting, scheduling, prescriptions, labs, billing, audit logs, and role-based access. Later I led the work with other developers, from requirements to production.",
+    role: "Architecture, full-stack development, team lead",
+    note: "The production system is under NDA. The demo uses fake data.",
     metrics: [
       { value: "100K+", label: "patients supported" },
       { value: "100+", label: "healthcare providers" },
@@ -53,7 +53,7 @@ const featuredProjects: FeaturedProject[] = [
     demo: {
       title: "DemoEHR",
       description:
-        "A sanitized product environment showing patient management, clinical notes, vitals, lab results, and multi-facility workflows. No production data is included.",
+        "A copy of the product with fake data: patient management, clinical notes, vitals, lab results, and multiple facilities.",
       screenshots: [
         {
           src: "https://assets.elmario.dev/demo-images/patient-overview.webp",
@@ -81,11 +81,11 @@ const featuredProjects: FeaturedProject[] = [
     id: "insurance",
     title: "Insurance Verification Automation",
     outcome:
-      "A web application and automation worker that turned an eight-hour queue into focused exception review.",
+      "Insurance checks that took eight hours a day now take less than one hour of reviewing exceptions.",
     summary:
-      "Designed the dual-system architecture, built eligibility checks and batch processing, and created clear manual-review paths for cases automation could not resolve. Led a three-person team while owning critical implementation work.",
-    role: "System design, automation, product delivery, and team leadership",
-    note: "Production system is confidential. Demo uses sanitized data.",
+      "I designed a web app for the staff and a Node.js worker that runs eligibility checks in batches. Cases the worker cannot resolve go to a manual review queue. I led the project with other developers and wrote the critical parts.",
+    role: "System design, automation, team lead",
+    note: "The production system is confidential. The demo uses fake data.",
     metrics: [
       { value: "200+", label: "verifications per day" },
       { value: "90%+", label: "automatic success rate" },
@@ -96,7 +96,7 @@ const featuredProjects: FeaturedProject[] = [
     demo: {
       title: "InsVerify",
       description:
-        "A sanitized demonstration of queue management, eligibility results, batch processing, audit history, and exception handling. No client or patient data is included.",
+        "A copy of the product with fake data: the verification queue, eligibility results, batch runs, audit history, and exception handling.",
       screenshots: [
         {
           src: "https://assets.elmario.dev/demo-images/insverify-1.webp",
@@ -158,11 +158,10 @@ export function ProjectsSection() {
   return (
     <section id="work" className="section-container">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-20">
-        <h2 className="section-heading">Selected systems.</h2>
+        <h2 className="section-heading">Projects</h2>
         <p className="body-copy max-w-2xl lg:justify-self-end">
-          Work where privacy, reliability, and operational speed have real
-          consequences. Product evidence is visible first; deeper walkthroughs
-          stay optional.
+          Two systems I led at Omniwound. Both handle patient data, so the
+          screenshots and videos come from demo copies with fake data.
         </p>
       </div>
 
@@ -198,8 +197,8 @@ export function ProjectsSection() {
                     />
                   </button>
                   <p className="mt-4 text-sm leading-6 text-muted-foreground">
-                    {project.demo.title}, sanitized product environment. Select
-                    the image to inspect the gallery.
+                    {project.demo.title}, demo copy with fake data. Click the
+                    image to see more screenshots.
                   </p>
                 </div>
 
@@ -344,15 +343,15 @@ export function ProjectsSection() {
             <article className="border-b pb-10">
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <LockKeyholeIcon className="mt-0.5 size-4 shrink-0 text-primary" />
-                Client proprietary application
+                Client app, not public
               </div>
               <h3 className="mt-5 text-3xl font-semibold tracking-[-0.03em]">
                 Healthcare Provider Mobile App
               </h3>
               <p className="body-copy mt-5">
-                Built a native iPad application for patient visits, including
-                offline-first records, wound photography and measurements,
-                prescriptions, and scheduling with EMR synchronization.
+                A native iPad app that providers used during patient visits:
+                offline records, wound photos and measurements, prescriptions,
+                and scheduling, all synced with the EMR.
               </p>
               <p className="mt-5 text-sm text-muted-foreground">
                 Swift, SwiftUI, REST APIs, offline synchronization
@@ -365,8 +364,8 @@ export function ProjectsSection() {
                   Pulse
                 </h3>
                 <p className="body-copy mt-5">
-                  A product-storytelling experiment built with Astro, GSAP,
-                  canvas frame sequences, and scroll-driven interaction.
+                  A landing page experiment for a fictional smart ring, with a
+                  scroll-driven canvas animation. Built with Astro and GSAP.
                 </p>
                 <a
                   href="https://pulse.elmario.dev"

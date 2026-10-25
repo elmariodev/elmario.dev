@@ -4,81 +4,85 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Light variant of the elmariodev "Mango" palette: warm white ground,
+     plum ink, and a darker mango so accent text stays readable. */
   --radius: 0.75rem;
-  --background: oklch(0.985 0.004 285);
-  --foreground: oklch(0.16 0.015 285);
-  --card: oklch(0.97 0.006 285);
-  --card-foreground: oklch(0.16 0.015 285);
-  --popover: oklch(0.985 0.004 285);
-  --popover-foreground: oklch(0.16 0.015 285);
-  --primary: oklch(0.56 0.205 28);
-  --primary-foreground: oklch(0.985 0.004 285);
-  --secondary: oklch(0.93 0.008 285);
-  --secondary-foreground: oklch(0.21 0.016 285);
-  --muted: oklch(0.93 0.008 285);
-  --muted-foreground: oklch(0.42 0.025 285);
-  --accent: oklch(0.94 0.025 28);
-  --accent-foreground: oklch(0.24 0.03 28);
-  --destructive: oklch(0.55 0.22 25);
-  --border: oklch(0.86 0.012 285);
-  --input: oklch(0.86 0.012 285);
-  --ring: oklch(0.56 0.205 28);
-  --surface: oklch(0.965 0.006 285);
-  --surface-strong: oklch(0.925 0.01 285);
-  --chart-1: oklch(0.56 0.205 28);
-  --chart-2: oklch(0.58 0.14 245);
-  --chart-3: oklch(0.62 0.11 180);
-  --chart-4: oklch(0.68 0.13 85);
-  --chart-5: oklch(0.5 0.12 315);
-  --sidebar: oklch(0.97 0.006 285);
-  --sidebar-foreground: oklch(0.16 0.015 285);
-  --sidebar-primary: oklch(0.56 0.205 28);
-  --sidebar-primary-foreground: oklch(0.985 0.004 285);
-  --sidebar-accent: oklch(0.93 0.008 285);
-  --sidebar-accent-foreground: oklch(0.21 0.016 285);
-  --sidebar-border: oklch(0.86 0.012 285);
-  --sidebar-ring: oklch(0.56 0.205 28);
+  --background: #faf6f0;
+  --foreground: #17131f;
+  --card: #f3ede4;
+  --card-foreground: #17131f;
+  --popover: #faf6f0;
+  --popover-foreground: #17131f;
+  --primary: #9a5b00;
+  --primary-foreground: #fffaf2;
+  --secondary: #ebe3d7;
+  --secondary-foreground: #231c2f;
+  --muted: #ebe3d7;
+  --muted-foreground: #5f566b;
+  --accent: #f6e6c8;
+  --accent-foreground: #3d2600;
+  --destructive: #c2185b;
+  --border: #e0d6c8;
+  --input: #e0d6c8;
+  --ring: #9a5b00;
+  --surface: #f5efe6;
+  --surface-strong: #ece4d8;
+  --chart-1: #9a5b00;
+  --chart-2: #c2185b;
+  --chart-3: #0f7f7a;
+  --chart-4: #4f5bd5;
+  --chart-5: #8e3fb8;
+  --sidebar: #f3ede4;
+  --sidebar-foreground: #17131f;
+  --sidebar-primary: #9a5b00;
+  --sidebar-primary-foreground: #fffaf2;
+  --sidebar-accent: #ebe3d7;
+  --sidebar-accent-foreground: #231c2f;
+  --sidebar-border: #e0d6c8;
+  --sidebar-ring: #9a5b00;
 }
 
 .dark {
-  --background: oklch(0.105 0.012 285);
-  --foreground: oklch(0.94 0.008 285);
-  --card: oklch(0.145 0.014 285);
-  --card-foreground: oklch(0.94 0.008 285);
-  --popover: oklch(0.16 0.014 285);
-  --popover-foreground: oklch(0.94 0.008 285);
-  --primary: oklch(0.72 0.18 28);
-  --primary-foreground: oklch(0.12 0.018 285);
-  --secondary: oklch(0.19 0.016 285);
-  --secondary-foreground: oklch(0.91 0.009 285);
-  --muted: oklch(0.18 0.016 285);
-  --muted-foreground: oklch(0.72 0.02 285);
-  --accent: oklch(0.23 0.04 28);
-  --accent-foreground: oklch(0.94 0.008 285);
-  --destructive: oklch(0.68 0.19 24);
-  --border: oklch(0.28 0.018 285);
-  --input: oklch(0.24 0.018 285);
-  --ring: oklch(0.72 0.18 28);
-  --surface: oklch(0.135 0.014 285);
-  --surface-strong: oklch(0.175 0.016 285);
-  --chart-1: oklch(0.72 0.18 28);
-  --chart-2: oklch(0.7 0.13 245);
-  --chart-3: oklch(0.74 0.11 180);
-  --chart-4: oklch(0.78 0.13 85);
-  --chart-5: oklch(0.7 0.12 315);
-  --sidebar: oklch(0.135 0.014 285);
-  --sidebar-foreground: oklch(0.94 0.008 285);
-  --sidebar-primary: oklch(0.72 0.18 28);
-  --sidebar-primary-foreground: oklch(0.12 0.018 285);
-  --sidebar-accent: oklch(0.19 0.016 285);
-  --sidebar-accent-foreground: oklch(0.91 0.009 285);
-  --sidebar-border: oklch(0.28 0.018 285);
-  --sidebar-ring: oklch(0.72 0.18 28);
+  /* elmariodev "Mango" brand tokens (youtube repo, brand/tokens.css). */
+  --background: #17131f;
+  --foreground: #f6f1ea;
+  --card: #231c2f;
+  --card-foreground: #f6f1ea;
+  --popover: #231c2f;
+  --popover-foreground: #f6f1ea;
+  --primary: #ffb224;
+  --primary-foreground: #1b1206;
+  --secondary: #231c2f;
+  --secondary-foreground: #f6f1ea;
+  --muted: #231c2f;
+  --muted-foreground: #a299ae;
+  --accent: #2e2438;
+  --accent-foreground: #f6f1ea;
+  --destructive: #ff5c8a;
+  --border: #3b3249;
+  --input: #3b3249;
+  --ring: #ffb224;
+  --surface: #1d1827;
+  --surface-strong: #2a2236;
+  --chart-1: #ffb224;
+  --chart-2: #ff5c8a;
+  --chart-3: #4fd1c5;
+  --chart-4: #8b9cff;
+  --chart-5: #c58cff;
+  --sidebar: #1d1827;
+  --sidebar-foreground: #f6f1ea;
+  --sidebar-primary: #ffb224;
+  --sidebar-primary-foreground: #1b1206;
+  --sidebar-accent: #2e2438;
+  --sidebar-accent-foreground: #f6f1ea;
+  --sidebar-border: #3b3249;
+  --sidebar-ring: #ffb224;
 }
 
 @theme inline {
-  --font-sans: var(--font-commissioner);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo-black), var(--font-montserrat), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -141,6 +145,11 @@
     text-wrap: balance;
   }
 
+  /* Archivo Black ships a single weight; never let the browser fake bold. */
+  h1 {
+    @apply font-display font-normal;
+  }
+
   p {
     text-wrap: pretty;
   }
@@ -165,7 +174,7 @@
   }
 
   .section-heading {
-    @apply text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl;
+    @apply font-display text-4xl font-normal tracking-[-0.02em] sm:text-5xl lg:text-6xl;
   }
 
   .body-copy {

@@ -3,22 +3,32 @@ import { AutomationRelay } from "@/components/experience/automation-relay";
 const experience = [
   {
     company: "Ventura Travel",
-    role: "Full-Stack Developer, Automations",
-    start: "2026-02",
-    dates: "Feb 2026 - Present",
+    role: "Full-Stack Developer, Ventura AI",
+    start: "2026-10",
+    dates: "Oct 2026 - Present",
     current: true,
     summary:
-      "Build the automation layer that turns business events into coordinated operational work.",
+      "I'm in charge of Ventura AI, an internal app where 100+ employees each have a private AI agent with chat, files, skills, scheduled tasks, and connectors to the company's tools. I maintain the platform, ship new connectors and features, and review the skills people propose.",
+  },
+  {
+    company: "Ventura Travel",
+    role: "Full-Stack Developer, Automations",
+    start: "2026-02",
+    end: "2026-10",
+    dates: "Feb 2026 - Oct 2026",
+    current: false,
+    summary:
+      "I moved the company's automations from legacy services and Make into a TypeScript monorepo, cut the active Make scenarios from 29 to 1, built new automations for the operations and finance teams, and documented 500+ automations in one catalog.",
   },
   {
     company: "Omniwound",
-    role: "Full-Stack Developer -> Senior Software Engineer",
+    role: "Full-Stack Developer, then Senior Software Engineer",
     start: "2019-07",
     end: "2026-01",
     dates: "Jul 2019 - Jan 2026",
     current: false,
     summary:
-      "Joined as a founding engineer, built a healthcare platform from the ground up, and later led architecture, delivery, and developer guidance.",
+      "I joined as one of the first engineers and helped build the company's healthcare platform from scratch. Later I led its architecture and the delivery work with other developers.",
   },
 ];
 
@@ -27,24 +37,18 @@ export function ExperienceSection() {
     <section id="experience" className="section-container">
       <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
         <div>
-          <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            Experience
-          </p>
-          <h2 className="section-heading max-w-xl">
-            From care systems to global operations.
-          </h2>
+          <h2 className="section-heading max-w-xl">Experience</h2>
         </div>
         <p className="body-copy max-w-2xl lg:pt-10">
-          The domain changed, but the responsibility did not: understand the
-          work, preserve its context, and build systems people can trust when
-          the next action matters.
+          More than six years building healthcare software at a startup, and
+          since 2026, automation and AI tools at a travel company.
         </p>
       </div>
 
       <ol className="mt-14 border-t sm:mt-18">
         {experience.map((item) => (
           <li
-            key={item.company}
+            key={`${item.company}-${item.start}`}
             className="grid gap-5 border-b py-8 lg:grid-cols-[11rem_1fr_1.2fr] lg:gap-10 lg:py-10"
           >
             <p className="font-mono text-sm leading-6 text-muted-foreground">
@@ -80,25 +84,29 @@ export function ExperienceSection() {
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Ventura Travel / current work
+              Ventura Travel / automations
             </p>
-            <h3 className="mt-5 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
-              What happens after the event.
+            <h3 className="mt-5 font-display text-4xl tracking-[-0.02em] sm:text-5xl lg:text-6xl">
+              Automations in one codebase
             </h3>
           </div>
           <div className="space-y-5 lg:pt-8">
             <p className="body-copy text-foreground">
-              At Ventura Travel, I build the automation layer that turns
-              business events into coordinated operational work.
+              Ventura runs hundreds of automations: booking changes, payment
+              reminders, provider emails, and tasks for the operations team.
+              When I joined, they were spread across old services and Make, a
+              no-code platform.
             </p>
             <p className="body-copy">
-              A signal can require communication, task creation, provider
-              follow-up, and an internal handoff. The system carries the
-              context so specialists can focus on human judgment.
+              I moved them into a TypeScript monorepo and cut the active Make
+              scenarios from 29 to 1 in about a week. I also built a catalog
+              that documents 500+ automations: what each one does and when it
+              runs. The animation below shows the kind of flow I build, without
+              real data.
             </p>
             <p className="text-sm leading-6 text-muted-foreground">
-              Current stack: TypeScript, Node.js, GraphQL, PostgreSQL, cloud
-              infrastructure, Docker, and CI/CD.
+              Stack: TypeScript, Node.js, Hono, Trigger.dev, Hasura GraphQL,
+              PostgreSQL, BigQuery, and GitLab CI.
             </p>
           </div>
         </div>

@@ -124,8 +124,8 @@ const traceLanes: TraceLane[] = [
   },
   {
     id: "outcome",
-    label: "Human-ready outcome",
-    detail: "clear next action",
+    label: "Done",
+    detail: "next step is clear",
     icon: CircleCheckIcon,
     tone: "outcome",
     startPhase: 8,

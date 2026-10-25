@@ -11,25 +11,24 @@ export function HeroSection() {
             Mario Montano, full-stack engineer
           </p>
 
-          <h1 className="text-[clamp(3rem,5.4vw,4.5rem)] font-semibold leading-[0.96] tracking-[-0.04em]">
-            Systems that keep complex work moving.
+          <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-[1] tracking-[-0.02em]">
+            I build web apps, automation, and AI tools.
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-8">
-            I build product software and automation for workflows where
-            context, reliability, and the next action matter.
+            I&apos;m in charge of Ventura AI, an internal platform that gives
+            100+ employees at Ventura Travel their own AI agent.
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Currently building internal automation at Ventura Travel.
-            Previously, I built healthcare systems from the ground up at
-            Omniwound.
+            Before that, I spent more than six years at Omniwound, a
+            healthcare startup, where I helped build its EMR from scratch.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 px-6 text-base">
               <a href="#experience">
-                See current experience
+                See my experience
                 <ArrowDownRightIcon className="size-5" />
               </a>
             </Button>

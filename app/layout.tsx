@@ -1,21 +1,36 @@
 import type { Metadata } from "next";
-import { Commissioner } from "next/font/google";
+import { Archivo_Black, JetBrains_Mono, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const commissioner = Commissioner({
-  variable: "--font-commissioner",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  display: "swap",
+});
+
+const archivoBlack = Archivo_Black({
+  variable: "--font-archivo-black",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   applicationName: "Mario Montano Portfolio",
   title:
-    "Mario Montano | Full-Stack Engineer | Automation and Product Systems",
+    "Mario Montano | Full-Stack Engineer | AI Tools and Automation",
   description:
-    "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
+    "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   keywords: [
     "Mario Montano",
     "Full-Stack Engineer",
@@ -23,7 +38,9 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Node.js",
-    "Operational Automation",
+    "AI Agents",
+    "Automation",
+    "Trigger.dev",
     "GraphQL",
     "Hasura",
     "PostgreSQL",
@@ -55,13 +72,13 @@ export const metadata: Metadata = {
     siteName: "Mario Montano Portfolio",
     title: "Mario Montano | Full-Stack Engineer",
     description:
-      "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
+      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mario Montano | Full-Stack Engineer",
     description:
-      "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
+      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     creator: "@elmariodev",
   },
   robots: {
@@ -86,13 +103,19 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Mario Montano",
-    jobTitle: "Full-Stack Developer, Automations",
+    jobTitle: "Full-Stack Developer, Ventura AI",
     description:
-      "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
+      "Full-stack engineer building web apps, automation, and AI tools. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     url: "https://elmario.dev",
     sameAs: [
       "https://github.com/elmariodev",
       "https://linkedin.com/in/elmariodev",
+      "https://www.youtube.com/@elmariodev",
+      "https://www.instagram.com/elmariodev",
+      "https://www.tiktok.com/@elmariodev",
+      "https://x.com/elmariodev",
+      "https://www.threads.com/@elmariodev",
+      "https://www.facebook.com/elmariodev",
     ],
     knowsAbout: [
       "Full-Stack Development",
@@ -117,6 +140,8 @@ export default function RootLayout({
       "iOS Development",
       "API Development",
       "Operational Automation",
+      "AI Agents",
+      "Model Context Protocol",
     ],
     worksFor: {
       "@type": "Organization",
@@ -124,9 +149,9 @@ export default function RootLayout({
     },
     hasOccupation: {
       "@type": "Occupation",
-      name: "Full-Stack Developer, Automations",
+      name: "Full-Stack Developer, Ventura AI",
       skills:
-        "Full-Stack Development, TypeScript, Node.js, GraphQL, PostgreSQL, Cloud Infrastructure, Docker, CI/CD, Operational Automation",
+        "Full-Stack Development, TypeScript, Node.js, GraphQL, PostgreSQL, Docker, CI/CD, Automation, AI Agents",
     },
   };
 
@@ -158,7 +183,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className={`${commissioner.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${archivoBlack.variable} ${jetbrainsMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
