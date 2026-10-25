@@ -70,13 +70,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://elmario.dev",
     siteName: "Mario Montano Portfolio",
-    title: "Mario Montano | Full-Stack Engineer",
+    title: "Mario Montano | AI Agents and Automation",
     description:
       "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mario Montano | Full-Stack Engineer",
+    title: "Mario Montano | AI Agents and Automation",
     description:
       "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     creator: "@elmariodev",
