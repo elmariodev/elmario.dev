@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "Healthcare Software",
   ],
-  authors: [{ name: "Mario Montano", url: "https://mariomon.dev" }],
+  authors: [{ name: "Mario Montano", url: "https://elmario.dev" }],
   creator: "Mario Montano",
-  metadataBase: new URL("https://mariomon.dev"),
+  metadataBase: new URL("https://elmario.dev"),
   alternates: {
     canonical: "/",
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mariomon.dev",
+    url: "https://elmario.dev",
     siteName: "Mario Montano Portfolio",
     title: "Mario Montano | Full-Stack Engineer",
     description:
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Mario Montano | Full-Stack Engineer",
     description:
       "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
-    creator: "@mariomondev",
+    creator: "@elmariodev",
   },
   robots: {
     index: true,
@@ -89,9 +89,9 @@ export default function RootLayout({
     jobTitle: "Full-Stack Developer, Automations",
     description:
       "Full-stack engineer building product systems and operational automation across global travel and healthcare.",
-    url: "https://mariomon.dev",
+    url: "https://elmario.dev",
     sameAs: [
-      "https://github.com/mariomondev",
+      "https://github.com/elmariodev",
       "https://linkedin.com/in/mariomondev",
     ],
     knowsAbout: [
@@ -136,7 +136,7 @@ export default function RootLayout({
     name: "Mario Montano Portfolio",
     description:
       "Experience and selected systems by Mario Montano, a full-stack engineer working across operational automation and healthcare products.",
-    url: "https://mariomon.dev",
+    url: "https://elmario.dev",
     author: {
       "@type": "Person",
       name: "Mario Montano",
@@ -147,8 +147,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://assets.mariomon.dev" />
-        <link rel="dns-prefetch" href="https://assets.mariomon.dev" />
+        <link rel="preconnect" href="https://assets.elmario.dev" />
+        <link rel="dns-prefetch" href="https://assets.elmario.dev" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

@@ -14,8 +14,8 @@ const contentSecurityPolicy = [
   `script-src ${scriptSources}`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
-  "img-src 'self' data: blob: https://assets.mariomon.dev",
-  "media-src 'self' https://assets.mariomon.dev",
+  "img-src 'self' data: blob: https://assets.elmario.dev",
+  "media-src 'self' https://assets.elmario.dev",
   "connect-src 'self' https://cloudflareinsights.com",
   "object-src 'none'",
   "frame-src 'self'",
@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.mariomon.dev",
+        hostname: "assets.elmario.dev",
         pathname: "/demo-images/**",
       },
     ],

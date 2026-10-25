@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/private/"],
     },
-    sitemap: "https://mariomon.dev/sitemap.xml",
+    sitemap: "https://elmario.dev/sitemap.xml",
   };
 }

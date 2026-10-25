@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const profileLinks = [
   {
-    href: "https://github.com/mariomondev",
+    href: "https://github.com/elmariodev",
     label: "GitHub",
     icon: GithubIcon,
   },
@@ -30,7 +30,7 @@ export function ContactSection() {
 
         <div className="lg:justify-self-end">
           <Button asChild size="lg" className="h-12 px-6 text-base">
-            <a href="mailto:mario@mariomon.dev">
+            <a href="mailto:hola@elmario.dev">
               <MailIcon className="size-5" />
               Start a conversation
             </a>

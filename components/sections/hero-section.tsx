@@ -39,7 +39,7 @@ export function HeroSection() {
               size="lg"
               className="h-12 border-border bg-transparent px-6 text-base"
             >
-              <a href="mailto:mario@mariomon.dev">
+              <a href="mailto:hola@elmario.dev">
                 <MailIcon className="size-5" />
                 Email Mario
               </a>

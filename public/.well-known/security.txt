@@ -1,4 +1,4 @@
-Contact: mailto:mario@mariomon.dev
+Contact: mailto:hola@elmario.dev
 Expires: 2027-07-13T23:59:59Z
-Canonical: https://mariomon.dev/.well-known/security.txt
+Canonical: https://elmario.dev/.well-known/security.txt
 Preferred-Languages: en

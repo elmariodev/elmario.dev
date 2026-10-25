@@ -56,25 +56,25 @@ const featuredProjects: FeaturedProject[] = [
         "A sanitized product environment showing patient management, clinical notes, vitals, lab results, and multi-facility workflows. No production data is included.",
       screenshots: [
         {
-          src: "https://assets.mariomon.dev/demo-images/patient-overview.webp",
+          src: "https://assets.elmario.dev/demo-images/patient-overview.webp",
           alt: "DemoEHR patient overview with demographics and clinical navigation",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/patient-list.webp",
+          src: "https://assets.elmario.dev/demo-images/patient-list.webp",
           alt: "DemoEHR patient list with filters and care status",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/clinical-note.webp",
+          src: "https://assets.elmario.dev/demo-images/clinical-note.webp",
           alt: "DemoEHR clinical note with vitals and SOAP documentation",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/provider-profile.webp",
+          src: "https://assets.elmario.dev/demo-images/provider-profile.webp",
           alt: "DemoEHR provider profile and facility access",
         },
       ],
-      videoSrc: "https://assets.mariomon.dev/emr-template.mp4",
+      videoSrc: "https://assets.elmario.dev/emr-template.mp4",
       videoPoster:
-        "https://assets.mariomon.dev/demo-images/patient-overview.webp",
+        "https://assets.elmario.dev/demo-images/patient-overview.webp",
     },
   },
   {
@@ -99,24 +99,24 @@ const featuredProjects: FeaturedProject[] = [
         "A sanitized demonstration of queue management, eligibility results, batch processing, audit history, and exception handling. No client or patient data is included.",
       screenshots: [
         {
-          src: "https://assets.mariomon.dev/demo-images/insverify-1.webp",
+          src: "https://assets.elmario.dev/demo-images/insverify-1.webp",
           alt: "InsVerify queue management dashboard",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/insverify-2.webp",
+          src: "https://assets.elmario.dev/demo-images/insverify-2.webp",
           alt: "InsVerify patient verification status list",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/insverify-3.webp",
+          src: "https://assets.elmario.dev/demo-images/insverify-3.webp",
           alt: "InsVerify eligibility results and source documents",
         },
         {
-          src: "https://assets.mariomon.dev/demo-images/insverify-4.webp",
+          src: "https://assets.elmario.dev/demo-images/insverify-4.webp",
           alt: "InsVerify verification history and audit trail",
         },
       ],
-      videoSrc: "https://assets.mariomon.dev/insurance-verification.mp4",
-      videoPoster: "https://assets.mariomon.dev/demo-images/insverify-1.webp",
+      videoSrc: "https://assets.elmario.dev/insurance-verification.mp4",
+      videoPoster: "https://assets.elmario.dev/demo-images/insverify-1.webp",
     },
   },
 ];
@@ -369,7 +369,7 @@ export function ProjectsSection() {
                   canvas frame sequences, and scroll-driven interaction.
                 </p>
                 <a
-                  href="https://pulse.mariomon.dev"
+                  href="https://pulse.elmario.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="focus-ring mt-6 inline-flex h-11 items-center gap-2 rounded-md font-semibold text-primary underline-offset-4 hover:underline"
@@ -380,7 +380,7 @@ export function ProjectsSection() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg border bg-surface">
                 <Image
-                  src="https://assets.mariomon.dev/demo-images/pulse-hero.webp"
+                  src="https://assets.elmario.dev/demo-images/pulse-hero.webp"
                   alt="Pulse smart ring product landing page"
                   fill
                   sizes="(max-width: 640px) 100vw, 12rem"
