@@ -8,7 +8,7 @@ const profileLinks = [
     icon: GithubIcon,
   },
   {
-    href: "https://linkedin.com/in/mariomondev",
+    href: "https://linkedin.com/in/elmariodev",
     label: "LinkedIn",
     icon: LinkedinIcon,
   },

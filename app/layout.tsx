@@ -92,7 +92,7 @@ export default function RootLayout({
     url: "https://elmario.dev",
     sameAs: [
       "https://github.com/elmariodev",
-      "https://linkedin.com/in/mariomondev",
+      "https://linkedin.com/in/elmariodev",
     ],
     knowsAbout: [
       "Full-Stack Development",
