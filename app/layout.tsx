@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black, JetBrains_Mono, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { socialLinks } from "@/lib/social-links";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -107,16 +108,7 @@ export default function RootLayout({
     description:
       "Full-stack engineer building AI agents, automation, and the web apps around them. In charge of Ventura AI at Ventura Travel; previously built healthcare software at Omniwound.",
     url: "https://elmario.dev",
-    sameAs: [
-      "https://github.com/elmariodev",
-      "https://linkedin.com/in/elmariodev",
-      "https://www.youtube.com/@elmariodev",
-      "https://www.instagram.com/elmariodev",
-      "https://www.tiktok.com/@elmariodev",
-      "https://x.com/elmariodev",
-      "https://www.threads.com/@elmariodev",
-      "https://www.facebook.com/elmariodev",
-    ],
+    sameAs: socialLinks.map((link) => link.href),
     knowsAbout: [
       "Full Stack Development",
       "TypeScript",

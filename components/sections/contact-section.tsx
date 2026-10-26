@@ -1,18 +1,6 @@
-import { ArrowUpRightIcon, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
+import { ArrowUpRightIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const profileLinks = [
-  {
-    href: "https://github.com/elmariodev",
-    label: "GitHub",
-    icon: GithubIcon,
-  },
-  {
-    href: "https://linkedin.com/in/elmariodev",
-    label: "LinkedIn",
-    icon: LinkedinIcon,
-  },
-];
+import { socialHandle, socialLinks } from "@/lib/social-links";
 
 export function ContactSection() {
   return (
@@ -34,8 +22,15 @@ export function ContactSection() {
             </a>
           </Button>
 
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3">
-            {profileLinks.map((link) => {
+          <p className="mt-8 text-sm text-muted-foreground">
+            <span className="font-mono font-semibold text-foreground">
+              {socialHandle}
+            </span>{" "}
+            on every network
+          </p>
+
+          <div className="mt-3 flex max-w-md flex-wrap gap-x-6 gap-y-1">
+            {socialLinks.map((link) => {
               const Icon = link.icon;
 
               return (
