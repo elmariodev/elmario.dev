@@ -20,9 +20,9 @@ import {
   ScanSearchIcon,
   SearchIcon,
   SendIcon,
-  SparklesIcon,
   TicketIcon,
   TimerIcon,
+  WorkflowIcon,
   type LucideIcon,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -190,6 +190,9 @@ const fadeAt = 10600;
 const scenarioLength = 11200;
 const reducedMotionTime = 9400;
 
+const logRows = 4;
+const logRowHeight = 22;
+
 type Box = { x: number; y: number; w: number; h: number };
 
 type Layout = {
@@ -293,6 +296,10 @@ export function AgentOrchestration() {
     const stage = stageRef.current;
     if (!stage) return;
 
+    // Measure once right away: ResizeObserver can fire late (or not at all
+    // in a background tab), and the unscaled 720px stage would overflow.
+    setStageWidth(stage.clientWidth);
+
     const observer = new ResizeObserver(([entry]) =>
       setStageWidth(entry.contentRect.width),
     );
@@ -334,7 +341,7 @@ export function AgentOrchestration() {
   return (
     <figure
       ref={figureRef}
-      className="settle-in w-full max-w-4xl lg:justify-self-end"
+      className="settle-in w-full min-w-0 max-w-4xl lg:justify-self-end"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
@@ -354,7 +361,7 @@ export function AgentOrchestration() {
         ) : (
           <button
             type="button"
-            className="focus-ring inline-flex h-9 shrink-0 items-center gap-2 rounded-md border bg-background/80 px-3 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
+            className="focus-ring inline-flex h-11 shrink-0 items-center gap-2 rounded-md border bg-background/80 px-3 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
             onClick={() => setIsPaused((paused) => !paused)}
             aria-pressed={isPaused}
             aria-label={
@@ -391,7 +398,8 @@ export function AgentOrchestration() {
           style={{
             width: layout.width,
             height: layout.height,
-            left: stageWidth === null ? 0 : (stageWidth - layout.width * scale) / 2,
+            left:
+              stageWidth === null ? 0 : (stageWidth - layout.width * scale) / 2,
             scale,
           }}
           initial={false}
@@ -409,11 +417,11 @@ export function AgentOrchestration() {
       </div>
 
       <p className="sr-only">
-        Animated examples of AI agents at work: a customer asks for flights
-        and agents search fares, book the seats, and send the confirmation; a
+        Animated examples of AI agents at work: a customer asks for flights and
+        agents search fares, book the seats, and send the confirmation; a
         supplier email changes a trip and agents update it and notify the
-        traveler; a coding task is planned, built, and reviewed by agents
-        before Mario reviews it. The examples contain no real data.
+        traveler; a coding task is planned, built, and reviewed by agents before
+        Mario reviews it. The examples contain no real data.
       </p>
     </figure>
   );
@@ -437,17 +445,6 @@ function Stage({
 
   return (
     <>
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, var(--border) 1px, transparent 1.4px)",
-          backgroundSize: "18px 18px",
-          maskImage:
-            "radial-gradient(ellipse at 50% 45%, black 30%, transparent 72%)",
-        }}
-      />
-
       <svg
         width={layout.width}
         height={layout.height}
@@ -498,7 +495,6 @@ function Stage({
           state={agentStates[index]}
           t={t}
           compact={layout.compact}
-          running={running}
         />
       ))}
 
@@ -527,10 +523,7 @@ function PromptBar({
 }) {
   const typedLength = Math.max(
     0,
-    Math.min(
-      scenario.prompt.length,
-      Math.floor((t - typeStart) / typeSpeed),
-    ),
+    Math.min(scenario.prompt.length, Math.floor((t - typeStart) / typeSpeed)),
   );
   const isTyped = typedLength === scenario.prompt.length;
   const isSent = t >= submitAt;
@@ -538,7 +531,7 @@ function PromptBar({
   return (
     <div
       className={cn(
-        "absolute flex items-center gap-3 rounded-2xl border bg-card/85 px-3 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.6)] backdrop-blur transition-colors duration-500",
+        "absolute flex items-center gap-3 rounded-2xl border bg-card px-3 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.6)] transition-colors duration-500",
         isSent && "border-primary/45",
       )}
       style={boxStyle(box)}
@@ -593,7 +586,6 @@ function Orchestrator({
   running: boolean;
 }) {
   const { x, y, size } = layout.orchestrator;
-  const isBusy = t >= submitAt && agentStates.some((state) => state !== "done");
   const status =
     t < submitAt
       ? "Waiting for work"
@@ -609,11 +601,6 @@ function Orchestrator({
         className="relative -translate-x-1/2 -translate-y-1/2"
         style={{ width: size, height: size }}
       >
-        <div
-          className="absolute -inset-12 rounded-full bg-primary/25 blur-3xl transition-opacity duration-700"
-          style={{ opacity: isBusy ? 1 : 0.35 }}
-        />
-
         <div
           className={cn(
             "absolute -inset-3.5 rounded-full border border-dashed border-primary/45",
@@ -639,17 +626,8 @@ function Orchestrator({
           })}
         </div>
 
-        {isBusy && running ? (
-          <motion.span
-            className="absolute inset-0 rounded-full bg-primary/35"
-            initial={{ scale: 1, opacity: 0.6 }}
-            animate={{ scale: 1.7, opacity: 0 }}
-            transition={{ duration: 1.4, ease: "easeOut", repeat: Infinity }}
-          />
-        ) : null}
-
-        <div className="relative flex size-full items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_48px_-10px_var(--primary)]">
-          <SparklesIcon
+        <div className="relative flex size-full items-center justify-center rounded-full bg-primary text-primary-foreground">
+          <WorkflowIcon
             className={layout.compact ? "size-7" : "size-8"}
             strokeWidth={1.8}
           />
@@ -687,7 +665,6 @@ function AgentCard({
   state,
   t,
   compact,
-  running,
 }: {
   agent: Agent;
   slot: number;
@@ -695,7 +672,6 @@ function AgentCard({
   state: AgentState;
   t: number;
   compact: boolean;
-  running: boolean;
 }) {
   const tone = slotTones[slot];
   const span = agentWindows[slot];
@@ -713,33 +689,23 @@ function AgentCard({
       style={boxStyle(box)}
     >
       <div className="relative size-full">
-        {/* The sweep sits behind a translucent border, so the border and its
-            corners stay visible while the light passes. */}
-        {state === "working" && running ? (
-          <div className="absolute inset-0 overflow-hidden rounded-xl">
-            <div
-              className="absolute inset-[-100%] animate-[spin_2.4s_linear_infinite]"
-              style={{
-                background: `conic-gradient(from 0deg, transparent 0 62%, ${tone.color} 86%, transparent 100%)`,
-              }}
-            />
-          </div>
-        ) : null}
-
         <div
           className={cn(
-            "relative flex h-full flex-col rounded-xl border bg-card bg-clip-padding transition-[border-color,box-shadow] duration-500",
+            "relative flex h-full flex-col rounded-xl border bg-card bg-clip-padding transition-[border-color,background-color] duration-500",
             compact ? "items-center p-2.5 text-center" : "p-3",
           )}
           style={{
+            // State shows as a solid border and a light tint, not a glow.
             borderColor:
               state === "idle"
                 ? "var(--border)"
-                : `color-mix(in oklab, ${tone.color} 55%, transparent)`,
-            boxShadow:
+                : state === "working"
+                  ? tone.color
+                  : `color-mix(in oklab, ${tone.color} 45%, transparent)`,
+            backgroundColor:
               state === "working"
-                ? `0 0 28px -10px ${tone.color}`
-                : "none",
+                ? `color-mix(in oklab, ${tone.color} 7%, var(--card))`
+                : undefined,
           }}
         >
           {compact ? (
@@ -795,7 +761,10 @@ function AgentCard({
                       )}
                     >
                       {isLast ? (
-                        <CheckIcon className="size-3 shrink-0" strokeWidth={3} />
+                        <CheckIcon
+                          className="size-3 shrink-0"
+                          strokeWidth={3}
+                        />
                       ) : (
                         <span className={cn("shrink-0", tone.text)}>{">"}</span>
                       )}
@@ -880,44 +849,52 @@ function LiveLog({
     )
     .filter((entry) => t >= entry.at)
     .sort((a, b) => a.at - b.at)
-    .slice(-4);
+    .slice(-logRows);
 
   return (
     <div
-      className="absolute rounded-xl border bg-card/85 px-3 py-2.5 backdrop-blur"
+      className="absolute overflow-hidden rounded-xl border bg-card px-3 py-2.5"
       style={boxStyle(box)}
     >
       <p className="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
         Live log
       </p>
-      <ul className="mt-1.5 space-y-0.5">
-        {entries.map((entry) => (
-          <motion.li
-            key={`${entry.slot}-${entry.line}`}
-            layout="position"
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-            className="flex items-center gap-2 font-mono text-[11px] leading-[22px]"
-          >
-            <span
-              className={cn(
-                "w-[5.5rem] shrink-0 truncate font-bold",
-                slotTones[entry.slot].text,
-              )}
+      {/* Rows sit in fixed slots and move with "y" instead of layout
+          animation: the stage is scaled, and layout measurements under a
+          scaled parent put the rows outside the box. */}
+      <ul
+        className="relative mt-1.5 overflow-hidden"
+        style={{ height: logRows * logRowHeight }}
+      >
+        <AnimatePresence initial={false}>
+          {entries.map((entry, index) => (
+            <motion.li
+              key={`${entry.slot}-${entry.line}`}
+              initial={{ opacity: 0, y: index * logRowHeight + 6 }}
+              animate={{ opacity: 1, y: index * logRowHeight }}
+              exit={{ opacity: 0, y: -logRowHeight }}
+              transition={{ duration: 0.25 }}
+              className="absolute inset-x-0 top-0 flex items-center gap-2 font-mono text-[11px] leading-[22px]"
             >
-              {entry.agent.name}
-            </span>
-            <span
-              className={cn(
-                "truncate",
-                entry.isLast ? "text-emerald-500" : "text-muted-foreground",
-              )}
-            >
-              {entry.line}
-            </span>
-          </motion.li>
-        ))}
+              <span
+                className={cn(
+                  "w-[5.5rem] shrink-0 truncate font-bold",
+                  slotTones[entry.slot].text,
+                )}
+              >
+                {entry.agent.name}
+              </span>
+              <span
+                className={cn(
+                  "truncate",
+                  entry.isLast ? "text-emerald-500" : "text-muted-foreground",
+                )}
+              >
+                {entry.line}
+              </span>
+            </motion.li>
+          ))}
+        </AnimatePresence>
       </ul>
     </div>
   );
@@ -945,10 +922,8 @@ function ResultCard({
           exit={{ opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 22 }}
           className={cn(
-            "absolute flex rounded-2xl border border-emerald-500/45 bg-card px-4 shadow-[0_16px_48px_-20px_rgba(16,185,129,0.55)]",
-            compact
-              ? "flex-col justify-center gap-2.5"
-              : "items-center gap-3",
+            "absolute flex rounded-2xl border border-emerald-500/45 bg-card px-4 shadow-[0_16px_48px_-24px_rgba(0,0,0,0.6)]",
+            compact ? "flex-col justify-center gap-2.5" : "items-center gap-3",
           )}
           style={boxStyle(box)}
         >
@@ -989,7 +964,10 @@ function ResultCard({
                 compact && "self-end",
               )}
             >
-              <BadgeIcon badge={scenario.stamp} className="size-4 rounded-full" />
+              <BadgeIcon
+                badge={scenario.stamp}
+                className="size-4 rounded-full"
+              />
               {scenario.stamp.label}
             </motion.div>
           ) : null}
@@ -1023,7 +1001,9 @@ function Beam({
           "fill-none stroke-2 transition-opacity duration-500",
           tone.stroke,
         )}
-        style={{ opacity: state === "idle" ? 0 : state === "active" ? 0.35 : 0.5 }}
+        style={{
+          opacity: state === "idle" ? 0 : state === "active" ? 0.35 : 0.5,
+        }}
       />
       {state === "active" && running ? (
         <path
@@ -1031,7 +1011,6 @@ function Beam({
           pathLength={1}
           className={cn("beam-comet fill-none stroke-[3]", tone.stroke)}
           strokeLinecap="round"
-          style={{ filter: `drop-shadow(0 0 5px ${tone.color})` }}
         />
       ) : null}
     </>

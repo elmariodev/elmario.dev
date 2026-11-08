@@ -20,7 +20,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label={link.label}
                   title={link.label}
-                  className="focus-ring inline-flex size-10 items-center justify-center rounded-md transition-colors hover:text-foreground"
+                  className="focus-ring inline-flex size-11 items-center justify-center rounded-md transition-colors hover:text-foreground"
                 >
                   <Icon className="size-[1.125rem]" />
                 </a>

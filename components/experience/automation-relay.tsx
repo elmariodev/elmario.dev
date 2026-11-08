@@ -17,14 +17,7 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
-type TraceTone =
-  | "trigger"
-  | "core"
-  | "blue"
-  | "amber"
-  | "teal"
-  | "violet"
-  | "outcome";
+type TraceTone = "trigger" | "core" | "sky" | "coral" | "teal" | "outcome";
 
 type TraceStatus = "queued" | "running" | "waiting" | "done";
 
@@ -75,7 +68,7 @@ const traceLanes: TraceLane[] = [
     label: "Required email",
     detail: "prepared and sent",
     icon: MailIcon,
-    tone: "blue",
+    tone: "sky",
     startPhase: 2,
     donePhase: 3,
     segments: [{ start: 34, end: 49, startPhase: 2, endPhase: 3 }],
@@ -85,7 +78,7 @@ const traceLanes: TraceLane[] = [
     label: "Operational task",
     detail: "created with context",
     icon: ListTodoIcon,
-    tone: "amber",
+    tone: "coral",
     startPhase: 2,
     donePhase: 4,
     segments: [{ start: 34, end: 60, startPhase: 2, endPhase: 4 }],
@@ -117,7 +110,7 @@ const traceLanes: TraceLane[] = [
     label: "Internal handoff",
     detail: "owner informed",
     icon: UsersIcon,
-    tone: "violet",
+    tone: "core",
     startPhase: 2,
     donePhase: 5,
     segments: [{ start: 34, end: 70, startPhase: 2, endPhase: 5 }],
@@ -138,67 +131,59 @@ const toneStyles: Record<
   TraceTone,
   {
     icon: string;
+    active: string;
     bar: string;
     text: string;
     dot: string;
-    glow: string;
     border: string;
   }
 > = {
   trigger: {
-    icon: "border-orange-500/55 bg-orange-500/10 text-orange-500",
-    bar: "bg-orange-500",
-    text: "text-orange-500",
-    dot: "bg-orange-500",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--color-orange-500)_35%,transparent)]",
-    border: "border-orange-500/55",
+    icon: "border-foreground/30 bg-foreground/5 text-foreground",
+    active: "border-foreground/70 bg-foreground/12",
+    bar: "bg-foreground/70",
+    text: "text-foreground",
+    dot: "bg-foreground/70",
+    border: "border-foreground/40",
   },
   core: {
     icon: "border-primary/55 bg-primary/10 text-primary",
+    active: "border-primary bg-primary/20",
     bar: "bg-primary",
     text: "text-primary",
     dot: "bg-primary",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--primary)_35%,transparent)]",
     border: "border-primary/55",
   },
-  blue: {
-    icon: "border-chart-2/55 bg-chart-2/10 text-chart-2",
-    bar: "bg-chart-2",
-    text: "text-chart-2",
-    dot: "bg-chart-2",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--chart-2)_35%,transparent)]",
-    border: "border-chart-2/55",
-  },
-  amber: {
+  sky: {
     icon: "border-chart-4/55 bg-chart-4/10 text-chart-4",
+    active: "border-chart-4 bg-chart-4/20",
     bar: "bg-chart-4",
     text: "text-chart-4",
     dot: "bg-chart-4",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--chart-4)_35%,transparent)]",
     border: "border-chart-4/55",
   },
-  teal: {
-    icon: "border-chart-3/55 bg-chart-3/10 text-chart-3",
-    bar: "bg-chart-3",
-    text: "text-chart-3",
-    dot: "bg-chart-3",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--chart-3)_35%,transparent)]",
-    border: "border-chart-3/55",
-  },
-  violet: {
+  coral: {
     icon: "border-chart-5/55 bg-chart-5/10 text-chart-5",
+    active: "border-chart-5 bg-chart-5/20",
     bar: "bg-chart-5",
     text: "text-chart-5",
     dot: "bg-chart-5",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--chart-5)_35%,transparent)]",
     border: "border-chart-5/55",
+  },
+  teal: {
+    icon: "border-chart-3/55 bg-chart-3/10 text-chart-3",
+    active: "border-chart-3 bg-chart-3/20",
+    bar: "bg-chart-3",
+    text: "text-chart-3",
+    dot: "bg-chart-3",
+    border: "border-chart-3/55",
   },
   outcome: {
     icon: "border-emerald-500/55 bg-emerald-500/10 text-emerald-500",
+    active: "border-emerald-500 bg-emerald-500/20",
     bar: "bg-emerald-500",
     text: "text-emerald-500",
     dot: "bg-emerald-500",
-    glow: "shadow-[0_0_18px_color-mix(in_oklab,var(--color-emerald-500)_35%,transparent)]",
     border: "border-emerald-500/55",
   },
 };
@@ -314,7 +299,7 @@ export function AutomationRelay() {
         ) : (
           <button
             type="button"
-            className="focus-ring inline-flex h-10 shrink-0 items-center gap-2 rounded-md border bg-background/80 px-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+            className="focus-ring inline-flex h-11 shrink-0 items-center gap-2 rounded-md border bg-background/80 px-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
             onClick={() => setIsPaused((paused) => !paused)}
             aria-pressed={isPaused}
             aria-label={
@@ -396,7 +381,7 @@ function DesktopTrace({
             }}
             className="absolute inset-y-0 z-20 w-px bg-primary/70"
           >
-            <span className="absolute -left-1 top-2 size-2 rounded-full bg-primary shadow-[0_0_14px_color-mix(in_oklab,var(--primary)_65%,transparent)]" />
+            <span className="absolute -left-1 top-2 size-2 rounded-full bg-primary" />
           </motion.span>
         </div>
 
@@ -449,7 +434,7 @@ function DesktopLane({
           className={cn(
             "flex size-9 shrink-0 items-center justify-center rounded-full border",
             styles.icon,
-            isActive && styles.glow,
+            isActive && styles.active,
           )}
         >
           <Icon className="size-4.5" strokeWidth={1.8} />
@@ -572,7 +557,7 @@ function MobileLane({
         className={cn(
           "absolute left-0 top-5 z-20 flex size-9 items-center justify-center rounded-full border bg-background",
           styles.icon,
-          isActive && styles.glow,
+          isActive && styles.active,
         )}
       >
         <Icon className="size-4.5" strokeWidth={1.8} />
@@ -658,7 +643,6 @@ function TraceSpan({
           isWait
             ? cn("border border-dashed bg-background", styles.border)
             : styles.bar,
-          progress > 0 && styles.glow,
         )}
       />
     </span>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export function HeroSection() {
   return (
     <section id="top" className="border-b">
-      <div className="site-container grid min-h-[calc(100svh-4.5rem)] items-center gap-14 py-16 lg:grid-cols-[0.78fr_1.22fr] lg:gap-8 lg:py-24">
+      <div className="site-container grid min-h-[calc(100svh-4.5rem)] grid-cols-1 items-center gap-14 py-16 lg:grid-cols-[0.88fr_1.12fr] lg:gap-12 lg:py-20">
         <div className="max-w-3xl">
           <p className="mb-6 text-lg font-semibold text-primary">
             Mario Montano, full-stack engineer
@@ -21,8 +21,8 @@ export function HeroSection() {
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Before that, I spent more than six years at Omniwound, a
-            healthcare startup, where I helped build its EMR from scratch.
+            Before that, I spent more than six years at Omniwound, a healthcare
+            startup, where I helped build its EMR from scratch.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">

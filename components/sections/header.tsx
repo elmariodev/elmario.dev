@@ -1,10 +1,13 @@
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { cn } from "@/lib/utils";
 
+// On phones only Work and Contact stay: the hero CTA already leads to
+// Experience, and Contact is the goal of the page.
 const navigation = [
-  { href: "#experience", label: "Experience" },
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#experience", label: "Experience", mobile: false },
+  { href: "#work", label: "Work", mobile: true },
+  { href: "#about", label: "About", mobile: false },
+  { href: "#contact", label: "Contact", mobile: true },
 ];
 
 export function Header() {
@@ -26,7 +29,9 @@ export function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/icon.svg" alt="" className="size-8" aria-hidden="true" />
           <span className="flex items-baseline" aria-hidden="true">
-            <span className="font-mono font-bold text-muted-foreground">el</span>
+            <span className="font-mono font-bold text-muted-foreground">
+              el
+            </span>
             <span className="font-black">mario</span>
             <span className="font-mono font-bold text-primary">dev</span>
           </span>
@@ -36,13 +41,14 @@ export function Header() {
           className="flex items-center gap-1"
           aria-label="Primary navigation"
         >
-          {navigation.map((item, index) => (
+          {navigation.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`focus-ring inline-flex h-11 items-center rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground ${
-                index > 0 ? "max-sm:hidden" : ""
-              }`}
+              className={cn(
+                "focus-ring inline-flex h-11 items-center rounded-md px-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:px-3",
+                !item.mobile && "max-sm:hidden",
+              )}
             >
               {item.label}
             </a>
